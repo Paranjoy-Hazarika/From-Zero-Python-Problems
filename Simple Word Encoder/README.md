@@ -34,7 +34,7 @@ Unauthorized message!
 
 ## How to Run
 
-```python
+```bash
 def check_secret_word(sentence, secret_word):
     if sentence == "":
         return "Empty sentence - Unauthorized message!"

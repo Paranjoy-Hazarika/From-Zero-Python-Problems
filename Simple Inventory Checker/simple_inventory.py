@@ -42,9 +42,9 @@ try:
         for item in unavailable_items:
             print(f"- {item.capitalize()}")
 
-except ValueError:
-    print("Error: Please enter a valid number for the list of items")
+except KeyboardInterrupt:
+    print("\nQuiting")
 except NameError:
-    print("Error: Invalid input detected")
+    print("\nError: Invalid input detected")
 except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+    print(f"\nAn unexpected error occurred: {e}")
