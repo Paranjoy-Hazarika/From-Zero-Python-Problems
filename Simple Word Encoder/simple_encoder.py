@@ -1,4 +1,4 @@
-def check_secret_word(sentence, secret_word):
+def check_secret_word(sentence, secret_word) -> str:
     if sentence == "":
         return "Empty sentence - Unauthorized message!"
 
