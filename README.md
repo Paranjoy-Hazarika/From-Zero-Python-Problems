@@ -1,0 +1,93 @@
+# Python Projects Collection
+
+A collection of simple Python projects suitable for beginners. Each project demonstrates different Python concepts and programming practices.
+
+## Projects
+
+### 1. Simple Word Encoder
+A program that checks if a specific encoded word is present in a user's input message.
+- String manipulation
+- Input validation
+- Error handling
+- Basic control flow
+
+### 2. Simple Inventory Checker
+A program that checks if items are available in a predefined inventory list.
+- List operations
+- Input validation
+- Error handling
+- Case-insensitive matching
+- Formatted output
+
+### 3. Simple Expense Tracker
+A daily expense tracking program that allows users to add and view expenses.
+- Dictionary operations
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+- Total calculations
+
+## Getting Started
+
+Each project is contained in its own directory with its own README file. To run any project:
+
+1. Navigate to the project directory
+2. Run the Python file:
+```bash
+python <project_file>.py
+```
+
+## Requirements
+
+- Python 3.x (Python 3.10+ recommended for match-case functionality)
+- No external dependencies required
+
+## Project Structure
+
+```
+Python Problems/
+├── Simple Word Encoder/
+│   ├── simple_encoder.py
+│   └── README.md
+├── Simple Inventory Checker/
+│   ├── simple_inventory.py
+│   └── README.md
+├── Simple Expense Tracker/
+│   ├── simple_expense_tracker.py
+│   └── README.md
+└── README.md
+```
+
+## Features
+
+Each project includes:
+- Clear code structure
+- Error handling
+- Input validation
+- User-friendly interface
+- Detailed documentation
+
+## Learning Objectives
+
+These projects help learn:
+- Basic Python syntax
+- Control flow
+- Data structures
+- Error handling
+- Input/output operations
+- Code organization
+- Documentation
+
+## Contributing
+
+Feel free to:
+- Add new features
+- Improve error handling
+- Enhance documentation
+- Add new projects
+- Report issues
+
+## Note
+
+These projects are designed for learning purposes and can be extended with additional features as you learn more Python concepts.
