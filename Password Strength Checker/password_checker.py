@@ -1,6 +1,7 @@
 import string as s
 
-def password_checker(password: str, missing_elements: list) -> str:
+def password_checker(password: str) -> tuple[str, list[str]]:
+    missing_elements = []
     pass_len = len(password)
 
     has_lower = False
@@ -12,7 +13,7 @@ def password_checker(password: str, missing_elements: list) -> str:
 
     for char in password:
         if char in s.whitespace:
-            return "Not Valid"
+            return "Not Valid", []
         if char in s.ascii_lowercase:
             has_lower = True
         if char in s.ascii_uppercase:
@@ -40,11 +41,6 @@ def password_checker(password: str, missing_elements: list) -> str:
     else:
         check_case = 1
 
-    result = case_evaluate(check_case, has_upper, has_lower, has_number, has_special, missing_elements)
-    return result
-
-
-def case_evaluate(check_case: int, has_upper: bool, has_lower: bool, has_number: bool, has_special: bool, missing_elements: list) -> str:
     match check_case:
         case 1:
             strength = "weak"
@@ -61,38 +57,44 @@ def case_evaluate(check_case: int, has_upper: bool, has_lower: bool, has_number:
         missing_elements.append("Numbers")
     if not has_special:
         missing_elements.append("Special Characters")
-
-    return strength.upper()
+    
+    return strength, missing_elements
 
 
 def password_checker_body():
-    missing_items = []
     while True:
         user_pass = input("Enter your password: ")
         if user_pass == "":
             print("Please enter a valid password")
             continue
 
-        result = password_checker(user_pass, missing_items)
-        print(f"\nYour entered password is {result}")
+        result, missing_items = password_checker(user_pass)
+        print()
+        print("-" * 50)
+        print(f"Your entered password is {result.upper()}\n")
         
         if result != "Not Valid" and result.lower() != "strong":
             print("Missing Items for Strong Password: ")
             for i, items in enumerate(missing_items, 1):
                 print(f"{i}. {items}")
+            print("-" * 50)
             print()
-        break
 
+        break
 
 def main():
     try:
         while True:
             try:
-                print("Password Strength Checker")
+                print("-" * 50)
+                print("Password Strength Checker".upper())
+                print("-" * 50)
                 print("""
-                        1. Password Check
-                        2. Exit
+1. Password Check
+2. Exit
                     """)
+                print("-" * 50)
+
                 user_choice = int(input("Enter you choice: "))
             except ValueError:
                 print("Please enter a number")
@@ -115,3 +117,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
