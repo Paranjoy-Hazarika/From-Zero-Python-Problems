@@ -28,6 +28,16 @@ A daily expense tracking program that allows users to add and view expenses.
 - Formatted output
 - Total calculations
 
+### 4. Password Strength Checker
+A program that evaluates password strength based on length and character types.
+- String analysis
+- Character type checking
+- Strength categorization
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -55,6 +65,9 @@ Python Problems/
 │   └── README.md
 ├── Simple Expense Tracker/
 │   ├── simple_expense_tracker.py
+│   └── README.md
+├── Password Strength Checker/
+│   ├── password_checker.py
 │   └── README.md
 └── README.md
 ```
