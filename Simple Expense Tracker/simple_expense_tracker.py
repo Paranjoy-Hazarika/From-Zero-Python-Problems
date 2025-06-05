@@ -17,7 +17,7 @@ def add_expense(expenses):
         
         except ValueError:
             print("Please enter a valid number")
-            continue
+            continue #doesnt need to be added as an error automatically will triger the while loop to run again
 
 def view_expenses(expenses):
     total = 0

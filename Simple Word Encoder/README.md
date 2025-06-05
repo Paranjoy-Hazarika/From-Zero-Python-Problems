@@ -24,7 +24,7 @@ This program takes a user's input sentence and checks if it contains the encoded
 
 ## Example
 
-```
+```bash
 Enter your sentence: HELLO, World!
 Greetings received!
 
@@ -34,7 +34,7 @@ Unauthorized message!
 
 ## How to Run
 
-```bash
+```python
 def check_secret_word(sentence, secret_word):
     if sentence == "":
         return "Empty sentence - Unauthorized message!"

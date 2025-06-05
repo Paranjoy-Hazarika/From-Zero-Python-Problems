@@ -30,7 +30,7 @@ This program allows users to check if their desired items are available in the i
 
 ## Example Usage
 
-```
+```bash
 Enter the number of items (in numbers): 3
 1. banana
 2. apple
@@ -54,7 +54,7 @@ The program handles various error cases:
 
 ## How to Run
 
-```bash
+```python
 try:
     inventory = ["banana", "apple"]
     user_list = []
