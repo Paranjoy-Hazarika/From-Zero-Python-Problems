@@ -8,6 +8,8 @@ def password_checker(password: str, missing_elements: list) -> str:
     has_number = False
     has_special = False
 
+    satisfied_categories = 0
+
     for char in password:
         if char in s.whitespace:
             return "Not Valid"
@@ -20,12 +22,23 @@ def password_checker(password: str, missing_elements: list) -> str:
         if char in s.punctuation:
             has_special = True
 
-    if pass_len < 6:
-        check_case = 1
-    elif pass_len < 12:
+    if has_lower:
+        satisfied_categories = satisfied_categories + 1
+    if has_upper:
+        satisfied_categories = satisfied_categories + 1
+    if has_number:
+        satisfied_categories = satisfied_categories + 1
+    if has_special:
+        satisfied_categories = satisfied_categories + 1
+
+    check_case = 1
+
+    if pass_len >= 12 and satisfied_categories >= 4:
+        check_case = 3
+    elif pass_len >= 6 and satisfied_categories >= 3:
         check_case = 2
     else:
-        check_case = 3
+        check_case = 1
 
     result = case_evaluate(check_case, has_upper, has_lower, has_number, has_special, missing_elements)
     return result
