@@ -1,9 +1,8 @@
 import string as s
 
 def password_checker(password: str, missing_elements: list) -> str:
-    pass_len = password.__len__()
+    pass_len = len(password)
 
-    valid = False
     has_lower = False
     has_upper = False
     has_number = False
@@ -22,16 +21,13 @@ def password_checker(password: str, missing_elements: list) -> str:
             has_special = True
 
     if pass_len < 6:
-        if not (has_lower) or not (has_upper) or not (has_number) or not (has_special):
-            check_case = 1
-    elif (pass_len > 6 and pass_len < 12):
-        if has_upper or has_lower or not (has_number) or not (has_special):
-            check_case = 2
+        check_case = 1
+    elif pass_len < 12:
+        check_case = 2
     else:
         check_case = 3
 
     result = case_evaluate(check_case, has_upper, has_lower, has_number, has_special, missing_elements)
-
     return result
 
 
@@ -65,21 +61,18 @@ def password_checker_body():
             continue
 
         result = password_checker(user_pass, missing_items)
-
         print(f"\nYour entered password is {result}")
         
-        if not (result == "Not Valid") and result.lower() != "strong":
+        if result != "Not Valid" and result.lower() != "strong":
             print("Missing Items for Strong Password: ")
             for i, items in enumerate(missing_items, 1):
                 print(f"{i}. {items}")
             print()
-            break
-            break
+        break
 
 
 def main():
     try:
-
         while True:
             try:
                 print("Password Strength Checker")
