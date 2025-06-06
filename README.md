@@ -29,10 +29,11 @@ A daily expense tracking program that allows users to add and view expenses.
 - Total calculations
 
 ### 4. Password Strength Checker
-A program that evaluates password strength based on length and character types.
+A program that evaluates password strength and generates secure passwords.
 - String analysis
 - Character type checking
 - Strength categorization
+- Random password generation
 - Input validation
 - Error handling
 - Match-case statements
