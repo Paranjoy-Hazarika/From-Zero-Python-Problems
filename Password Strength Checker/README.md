@@ -17,6 +17,7 @@ This program checks the strength of passwords by analyzing:
   - Strong: 12+ characters and all character types
   - Moderate: 6+ characters and 3+ character types
   - Weak: Less than 6 characters or fewer character types
+- Random password generation
 - Detailed feedback on missing character types
 - Input validation
 - Error handling for:
@@ -30,9 +31,14 @@ This program checks the strength of passwords by analyzing:
 1. Run the program
 2. Choose from the menu:
    - 1: Check Password
-   - 2: Exit
-3. Enter your password when prompted
-4. View the strength assessment and missing requirements
+   - 2: Generate Password
+   - 3: Exit
+3. For password check:
+   - Enter your password when prompted
+   - View the strength assessment and missing requirements
+4. For password generation:
+   - Get a randomly generated 12-character password
+   - Password includes letters, numbers, and special characters
 
 ## Example Usage
 
@@ -41,7 +47,8 @@ This program checks the strength of passwords by analyzing:
 PASSWORD STRENGTH CHECKER
 --------------------------------------------------
 1. Password Check
-2. Exit
+2. Generate Password
+3. Exit
 --------------------------------------------------
 Enter you choice: 1
 Enter your password: password123
@@ -53,6 +60,9 @@ Missing Items for Strong Password:
 1. UpperCase Letters
 2. Special Characters
 --------------------------------------------------
+
+Enter you choice: 2
+Generated Password: Kj#9mP$2nL@5
 ```
 
 ## Password Requirements
@@ -68,6 +78,7 @@ A strong password should have:
 
 ```python
 import string as s
+import random
 
 def password_checker(password: str) -> tuple[str, list[str]]:
     missing_elements = []
@@ -151,6 +162,21 @@ def password_checker_body():
 
         break
 
+
+def generate_password() -> str:
+    letters = s.ascii_letters
+    digits = s.digits
+    special = s.punctuation
+
+    all_chars = letters + digits + special
+
+    password = ""
+
+    for i in range(12):
+        password += random.choice(all_chars)
+
+    return password
+
 def main():
     try:
         while True:
@@ -160,7 +186,8 @@ def main():
                 print("-" * 50)
                 print("""
 1. Password Check
-2. Exit
+2. Generate Password
+3. Exit
                     """)
                 print("-" * 50)
 
@@ -173,6 +200,9 @@ def main():
                 case 1:
                     password_checker_body()
                 case 2:
+                    password = generate_password()
+                    print(f"\nGenerated Password: {password}")
+                case 3:
                     print("Quiting...")
                     break
                 case _:
@@ -193,3 +223,4 @@ if __name__ == "__main__":
 - The program is case-sensitive
 - Spaces are not allowed in passwords
 - The program will show which requirements are missing for a strong password
+- Generated passwords are 12 characters long and include all character types

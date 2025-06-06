@@ -1,4 +1,5 @@
 import string as s
+import random
 
 def password_checker(password: str) -> tuple[str, list[str]]:
     missing_elements = []
@@ -82,6 +83,21 @@ def password_checker_body():
 
         break
 
+
+def generate_password() -> str:
+    letters = s.ascii_letters
+    digits = s.digits
+    special = s.punctuation
+
+    all_chars = letters + digits + special
+
+    password = ""
+
+    for i in range(12):
+        password += random.choice(all_chars)
+
+    return password
+
 def main():
     try:
         while True:
@@ -91,7 +107,8 @@ def main():
                 print("-" * 50)
                 print("""
 1. Password Check
-2. Exit
+2. Generate Password
+3. Exit
                     """)
                 print("-" * 50)
 
@@ -104,6 +121,9 @@ def main():
                 case 1:
                     password_checker_body()
                 case 2:
+                    password = generate_password()
+                    print(f"\nGenerated Password: {password}")
+                case 3:
                     print("Quiting...")
                     break
                 case _:
