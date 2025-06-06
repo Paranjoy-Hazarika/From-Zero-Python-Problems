@@ -1,12 +1,12 @@
-def character_count(message) -> dict:
+def character_count(message: str) -> dict:
     counts = {}
 
-    for i in message.upper():
-        if i != " ":
-            if i not in counts:
-                counts[i] = 0
+    for char in message.upper():
+        if char != " " and not char.isdigit():
+            if char not in counts:
+                counts[char] = 0
 
-            counts[i] += 1
+            counts[char] += 1
 
     return counts
 
@@ -15,7 +15,7 @@ def main():
     print("CHARACTER COUNTER")
     while True:
         try:
-            print("Enter you choice: ")
+            print("Menu:")
             print("1. Count Characters")
             print("2. Exit")
 
@@ -24,19 +24,19 @@ def main():
             match user_choice:
                 case 1:
                     while True:
-                        message = input("Enter you sentence: ")
-                        if message == "":
+                        message = input("Enter your sentence: ")
+                        if not message or message.isspace():
                             print("Invalid input")
                             continue
-                        
+                        print(message)
                         count_list = character_count(message)
 
-                        for i, (keys, values) in enumerate(count_list.items(), 1):
-                            print(f"{i}. {keys} - {values}")
+                        for i, (char, count) in enumerate(count_list.items(), 1):
+                            print(f"{i}. {char} - {count}")
                             
                         break
                 case 2:
-                    print("Quiting...")
+                    print("Quitting...")
                     break
                 case _:
                     print("Please enter a valid input")
@@ -48,7 +48,7 @@ def main():
             print("\nTerminated by user")
             break
         except Exception as e:
-            print(f"Error occured: {e}")
+            print(f"Error occurred: {e}")
 
         
 if __name__ == "__main__":
