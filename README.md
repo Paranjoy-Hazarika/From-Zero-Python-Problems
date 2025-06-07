@@ -39,6 +39,26 @@ A program that evaluates password strength and generates secure passwords.
 - Match-case statements
 - Formatted output
 
+### 5. Character Counter
+A program that analyzes text and counts character frequencies.
+- String analysis
+- Dictionary operations
+- Case-insensitive counting
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+
+### 6. Number Guessing Game
+A game where players guess a random number within limited attempts.
+- Random number generation
+- User input validation
+- Game state management
+- Error handling
+- Match-case statements
+- Formatted output
+- Limited attempts system
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -69,6 +89,12 @@ Python Problems/
 │   └── README.md
 ├── Password Strength Checker/
 │   ├── password_checker.py
+│   └── README.md
+├── Character Counter/
+│   ├── character_counter.py
+│   └── README.md
+├── Number Guessing Game/
+│   ├── number_guessing_game.py
 │   └── README.md
 └── README.md
 ```

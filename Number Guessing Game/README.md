@@ -143,6 +143,6 @@ if __name__ == "__main__":
 ## Note
 
 - The game generates a random number between 1 and 10
-- You have 10 attempts to guess the correct number
+- You have 5 attempts to guess the correct number
 - The program provides hints after each guess
 - Use Ctrl+C to terminate the program at any time
