@@ -28,7 +28,7 @@ def main():
                         if not message or message.isspace():
                             print("Invalid input")
                             continue
-                        print(message)
+                        
                         count_list = character_count(message)
 
                         for i, (char, count) in enumerate(count_list.items(), 1):
