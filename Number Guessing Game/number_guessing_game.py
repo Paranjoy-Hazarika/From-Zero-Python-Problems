@@ -2,10 +2,12 @@ import random
 
 def number_guesser() -> bool:
     secret_number = random.randint(1, 10)
-    tries = 10
+    overall_tries = 5
+    tries = overall_tries
     guessed = False
 
     print("I am thinking of a number between (1 - 10)")
+    print(f"Guess the number. You have {overall_tries} tries")
 
     while tries != 0:
         try:
@@ -19,7 +21,7 @@ def number_guesser() -> bool:
 
             if user_number == secret_number:
                 print("OK")
-                print(f"Congratulations!!\nYou guessed it in {10 - tries} tries")
+                print(f"Congratulations!!\nYou guessed it in {overall_tries - tries} tries")
                 guessed = True
                 return True
             else:
