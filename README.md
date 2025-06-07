@@ -59,6 +59,15 @@ A game where players guess a random number within limited attempts.
 - Formatted output
 - Limited attempts system
 
+### 7. Grid Printer
+A program that prints rectangular and square grids using asterisks.
+- Shape generation
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+- Border decoration
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -95,6 +104,9 @@ Python Problems/
 │   └── README.md
 ├── Number Guessing Game/
 │   ├── number_guessing_game.py
+│   └── README.md
+├── Grid Printer/
+│   ├── grid_printer.py
 │   └── README.md
 └── README.md
 ```
