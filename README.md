@@ -68,6 +68,16 @@ A program that prints rectangular and square grids using asterisks.
 - Formatted output
 - Border decoration
 
+### 8. Bad Word Filter
+A program that filters out inappropriate words from text input.
+- Text filtering
+- Case-insensitive matching
+- Punctuation handling
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -107,6 +117,9 @@ Python Problems/
 │   └── README.md
 ├── Grid Printer/
 │   ├── grid_printer.py
+│   └── README.md
+├── Bad Word Filter/
+│   ├── bad_word_filter.py
 │   └── README.md
 └── README.md
 ```
