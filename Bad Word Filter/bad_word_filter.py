@@ -1,7 +1,6 @@
 import string
 
 def filter_word(sentence: str, bad_words: set) -> str:
-    
     filtered_words = []
     for words in sentence.split():
         clean_word = words.strip(string.punctuation)
@@ -22,15 +21,17 @@ def main():
     
     while True:
         try:
-            print("Menu")
+            print("-" * 50)
             print("1. Filter Words")
             print("2. Exit")
+            print("-" * 50)
 
             user_choice = int(input("Enter your choice: "))
 
             match user_choice:
                 case 1:
                     while True:
+                        print()
                         sentence = input("Enter your sentence: ")
                         
                         if not sentence.strip():
@@ -38,7 +39,10 @@ def main():
                             continue
 
                         cleaned_words = filter_word(sentence, bad_words)
-                        print(f"Filtered text: \n{cleaned_words}")
+                        print()
+                        print("Filtered text:")
+                        print("-" * 50)
+                        print(f"{cleaned_words}")
                         break
                 case 2:
                     print("Quiting...")
