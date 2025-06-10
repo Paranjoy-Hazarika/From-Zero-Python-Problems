@@ -1,16 +1,26 @@
 def view_contact_list(contacts: dict) -> None:
+    if not contacts:
+        print("\nNo contacts found!")
+        return
+        
+    print("\nContact List:")
+    print("-" * 50)
     for i, (name, number) in enumerate(contacts.items(), 1):
-        print(f"{i}. {name}: {number}")
+        print(f"{i}. {name:<20} | {number}")
+    print("-" * 50)
 
 def add_number(contacts: dict) -> None:
+    print("\nAdd New Contact")
+    print("-" * 50)
+    
     while True:
         try:
-            name = input("Enter your name: ")
+            name = input("Enter contact name: ")
             if not name:
-                print("Please enter a name")
+                print("Name cannot be empty")
                 continue
             
-            number = input("Enter your number: ")
+            number = input("Enter phone number: ").strip()
             if not number.isdigit():
                 print("Number must contain only digits")
                 continue
@@ -25,28 +35,34 @@ def add_number(contacts: dict) -> None:
                 continue
             
             contacts[name] = number
-            print(f"Contact {name} added successfully!")
+            print(f"\nContact '{name}' added successfully!")
             break
             
         except ValueError:
             print("Please enter a valid number")
         except KeyboardInterrupt:
-            print("\nTerminated by user")
+            print("\nOperation cancelled by user")
             break
         except Exception as e:
             print(f"Error occurred: {e}")
 
+def display_menu() -> None:
+    print("\nMENU")
+    print("-" * 50)
+    print("1. Add Contact")
+    print("2. View Contacts")
+    print("3. Exit")
+    print("-" * 50)
+
 def main():
     contact_list = {}
-    print("CONTACT LIST MANAGER")
+    print("\nCONTACT LIST MANAGER")
+    print("-" * 50)
     
     while True:
-        print("MENU")
-        print("1. Add Number")
-        print("2. View Contact List")
-        print("3. Exit")
+        display_menu()
         try:
-            user_choice = int(input("Enter your choice: "))
+            user_choice = int(input("Enter your choice (1-3): "))
 
             match user_choice:
                 case 1:
@@ -57,16 +73,16 @@ def main():
                     print("Quiting...")
                     break
                 case _:
-                    print("Please enter a valid option (1, 2 or 3)")
+                    print("\nPlease enter a valid option (1-3)")
                     continue
 
         except ValueError:
-            print("Please enter a number")
+            print("\nPlease enter a number")
         except KeyboardInterrupt:
-            print("\nTerminated by user")
+            print("\nProgram terminated by user")
             break
         except Exception as e:
-            print(f"Error occurred: {e}")
+            print(f"\nError occurred: {e}")
 
 
 if __name__ == "__main__":
