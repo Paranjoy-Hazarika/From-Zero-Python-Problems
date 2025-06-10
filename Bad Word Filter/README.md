@@ -80,7 +80,7 @@ def filter_word(sentence: str, bad_words: set) -> str:
 
 
 def main():
-    bad_words = {"fuck", "bastard"}
+    bad_words = {"foo", "bar", "test", "demo_word"}
 
     print("BAD WORD FILTER")
     
