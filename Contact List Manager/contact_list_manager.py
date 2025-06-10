@@ -3,8 +3,18 @@ number_manager = {
     "Lucia": 9730275560
 }
 
-name = input("Enter your name: ")
-number_manager[name] = int(input("Enter the number: "))
+while True:
+    print("1. Add number")
+    print("2. View contact list")
 
-for i, (name, number) in enumerate(number_manager.items(), 1):
-    print(f"{i}. {name} - {number}")
+    user_choice = int(input("Enter your choice: "))
+
+    if user_choice == 1:
+        name = input("Enter your name: ")
+        number_manager[name] = int(input("Enter the number: "))
+
+    elif user_choice == 2:
+        for i, (name, number) in enumerate(number_manager.items(), 1):
+            print(f"{i}. {name} - +91{number}")
+    else:
+        break
