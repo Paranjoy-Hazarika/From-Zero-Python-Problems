@@ -10,15 +10,26 @@ def add_number(contacts: dict) -> None:
                 print("Please enter a name")
                 continue
             
-            number = int(input("Enter your number: "))
-            if not number:
-                print("Please enter a number")
+            number = input("Enter your number: ")
+            if not number.isdigit():
+                print("Number must contain only digits")
+                continue
+                
+            number = int(number)
+            if number <= 0:
+                print("Number must be positive")
+                continue
+                
+            if len(str(number)) < 7 or len(str(number)) > 10:
+                print("Number must be between 7 and 10 digits")
                 continue
             
             contacts[name] = number
+            print(f"Contact {name} added successfully!")
             break
+            
         except ValueError:
-            print("Please enter a number")
+            print("Please enter a valid number")
         except KeyboardInterrupt:
             print("\nTerminated by user")
             break
