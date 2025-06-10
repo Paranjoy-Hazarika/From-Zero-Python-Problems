@@ -78,6 +78,16 @@ A program that filters out inappropriate words from text input.
 - Match-case statements
 - Formatted output
 
+### 9. Contact List Manager
+A program that manages contacts with names and phone numbers.
+- Dictionary operations
+- Phone number validation
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+- Menu system
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -120,6 +130,9 @@ Python Problems/
 │   └── README.md
 ├── Bad Word Filter/
 │   ├── bad_word_filter.py
+│   └── README.md
+├── Contact List Manager/
+│   ├── contact_list_manager.py
 │   └── README.md
 └── README.md
 ```
