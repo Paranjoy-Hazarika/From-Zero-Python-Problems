@@ -88,6 +88,17 @@ A program that manages contacts with names and phone numbers.
 - Formatted output
 - Menu system
 
+### 10. Vowel Consonant Counter
+A program that counts vowels and consonants in text input.
+- Text analysis
+- Character counting
+- Case-insensitive processing
+- Input validation
+- Error handling
+- Match-case statements
+- Formatted output
+- Menu system
+
 ## Getting Started
 
 Each project is contained in its own directory with its own README file. To run any project:
@@ -133,6 +144,9 @@ Python Problems/
 │   └── README.md
 ├── Contact List Manager/
 │   ├── contact_list_manager.py
+│   └── README.md
+├── Vowel Consonant Counter/
+│   ├── vowel_consonant_counter.py
 │   └── README.md
 └── README.md
 ```
